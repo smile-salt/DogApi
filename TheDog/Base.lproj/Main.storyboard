@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odR-n4-BJb">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="T9R-sZ-A8U">
+            <objects>
+                <navigationController id="odR-n4-BJb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t5o-Mi-Mns">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nZb-CY-Edu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIC-FJ-K5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-708" y="-27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TheDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iG1-UK-mzS">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="6CQ-7x-xsu">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6CQ-7x-xsu" id="sK6-as-oaG">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pbV-ga-Vt4" kind="show" identifier="toDogPhoto" id="TBg-cW-HXo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FWd-2r-sSu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pl5-dN-EZB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iG1-UK-mzS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2ZC-hB-aXM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iG1-UK-mzS" secondAttribute="trailing" id="8os-bZ-1it"/>
+                            <constraint firstItem="iG1-UK-mzS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FOX-YE-WGK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iG1-UK-mzS" secondAttribute="bottom" id="N2L-mD-r9m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N3A-np-BpN"/>
+                    <connections>
+                        <outlet property="dogList" destination="iG1-UK-mzS" id="wZc-jE-Ami"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-27"/>
+        </scene>
+        <!--Dog Photo View Controller-->
+        <scene sceneID="ipU-qA-gtu">
+            <objects>
+                <viewController id="pbV-ga-Vt4" customClass="DogPhotoViewController" customModule="TheDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Lp-aW-asw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fQ9-G7-MQ3">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pXe-8y-rHj">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogPhoto" id="f2z-P5-C43" customClass="DogPhotoCell" customModule="TheDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iMu-GI-sUf">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-hI-AJH">
+                                                    <rect key="frame" x="1" y="1" width="126" height="126"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bFM-hI-AJH" secondAttribute="trailing" constant="1" id="Ic9-Ff-XzA"/>
+                                                <constraint firstItem="bFM-hI-AJH" firstAttribute="top" secondItem="iMu-GI-sUf" secondAttribute="top" constant="1" id="KUI-DH-XrJ"/>
+                                                <constraint firstItem="bFM-hI-AJH" firstAttribute="leading" secondItem="iMu-GI-sUf" secondAttribute="leading" constant="1" id="Rms-CN-V9H"/>
+                                                <constraint firstAttribute="bottom" secondItem="bFM-hI-AJH" secondAttribute="bottom" constant="1" id="fQf-j2-eT4"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dogImageView" destination="bFM-hI-AJH" id="VTm-HE-o91"/>
+                                            <segue destination="Jua-gb-x24" kind="show" identifier="toDetail" id="Yhk-2P-Yru"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="pbV-ga-Vt4" id="rLc-hH-ljP"/>
+                                    <outlet property="delegate" destination="pbV-ga-Vt4" id="vNA-jA-CwQ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GKc-tS-Ka8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GKc-tS-Ka8" firstAttribute="bottom" secondItem="fQ9-G7-MQ3" secondAttribute="bottom" id="MpZ-uy-6aR"/>
+                            <constraint firstItem="fQ9-G7-MQ3" firstAttribute="top" secondItem="GKc-tS-Ka8" secondAttribute="top" id="dyx-Zw-m4n"/>
+                            <constraint firstItem="fQ9-G7-MQ3" firstAttribute="leading" secondItem="GKc-tS-Ka8" secondAttribute="leading" id="ljB-Wp-wX2"/>
+                            <constraint firstItem="GKc-tS-Ka8" firstAttribute="trailing" secondItem="fQ9-G7-MQ3" secondAttribute="trailing" id="osf-mI-F8W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pJ3-9x-7pI"/>
+                    <connections>
+                        <outlet property="dogPhoto" destination="fQ9-G7-MQ3" id="QIj-Xa-zNG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzf-cb-AWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="-27"/>
+        </scene>
+        <!--Dog Detail View Controller-->
+        <scene sceneID="D8v-qH-mrW">
+            <objects>
+                <viewController id="Jua-gb-x24" customClass="DogDetailViewController" customModule="TheDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61J-eI-RhR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-4M-IFH">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Mz5-UM-5ct"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fC1-qW-mG6"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SaF-3P-8XD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TVQ-4M-IFH" firstAttribute="bottom" secondItem="SaF-3P-8XD" secondAttribute="bottom" id="8gJ-7z-1bs"/>
+                            <constraint firstItem="TVQ-4M-IFH" firstAttribute="top" secondItem="SaF-3P-8XD" secondAttribute="top" id="clE-Ku-nqZ"/>
+                            <constraint firstItem="TVQ-4M-IFH" firstAttribute="trailing" secondItem="SaF-3P-8XD" secondAttribute="trailing" id="kp8-hG-FIX"/>
+                            <constraint firstItem="TVQ-4M-IFH" firstAttribute="leading" secondItem="SaF-3P-8XD" secondAttribute="leading" id="rlv-BG-cja"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3nl-xf-Vcp"/>
+                    <connections>
+                        <outlet property="mainScrollView" destination="TVQ-4M-IFH" id="Bj5-iV-YN2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIC-4G-coo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1722.9007633587785" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
